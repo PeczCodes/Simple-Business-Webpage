@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-
 
 
 :root {
@@ -30,9 +28,7 @@ header {
     justify-content: space-between;
     padding: 1.5rem 6vw;
     overflow-x: clip;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    z-index: 8;
 }
 
 .logo {
@@ -46,38 +42,9 @@ header {
     color: var(--background)
 }
 
-
-nav {
-    display: none;
-    gap: 5rem;
-}
-
 a {
     text-decoration: none;
 }
-
-nav a {
-    position: relative;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -.5rem;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background-color: var(--foreground);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-}
-
-nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
 
 .hamburger {
     align-items: center;
@@ -105,7 +72,7 @@ nav a:hover::after {
     transform: scaleY(0);
     height: 100vh;
     width: 100%;
-    z-index: 7;
+    z-index: 8;
     background: var(--background);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
@@ -163,13 +130,13 @@ nav a:hover::after {
 .hero {
     position: relative;
     z-index: 2;
-    height: 78vh;
+    min-height: 75vh;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
     color: #FFF5EE;
 }
 
@@ -291,4 +258,19 @@ nav a:hover::after {
     100% {
         transform: translateX(-50%);
     }
+}
+
+footer {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(70%);
+    width: 100%;
+    padding: 1rem;
+    font-size: small;
+}
+
+footer a {
+    color: white;
 }

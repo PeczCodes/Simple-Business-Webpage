@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+.store-name {
+    font-weight: 600;
+    font-size: 54px;
+    color: #d4af37;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+
+:root {
+    --background:#FFF5EE;
+    --foreground: #FFF5EE;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./assets/homebg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Raleway', sans-serif;
+    color: var(--background);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6vw;
+    overflow-x: clip;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+nav {
+    display: none;
+    gap: 5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--foreground);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.hamburger {
+    align-items: center;
+    display: grid;
+    gap: 1px;
+}
+.hamburger div {
+    background-color: white;
+    height: 2px;
+    width: 2rem;
+    border-radius: 30%;
+    transition: width 0.3s ease-in-out;
+}
+.hamburger div:nth-child(2).active  {
+    width: 1rem;
+}
+
+.hamburger-menu {
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    top: 4.5rem;
+    left: 0;
+    transform: scaleY(0);
+    height: 100vh;
+    width: 100%;
+    z-index: 7;
+    background: var(--background);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: top;
+}
+
+.hamburger-menu.active {
+    transform: scaleY(100%);
+}
+.hamburger-nav {
+    opacity: 0;
+    position: relative;
+    z-index: 8;
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+    padding: 2rem;
+    color: black;
+    transform: translateY(-1rem);
+}
+.hamburger-nav a {
+    color: goldenrod;
+}
+.hamburger-nav a:hover {
+    color: black;
+}
+
+
+.hamburger-nav.active {
+    transition-delay: 0.2s;
+    opacity: 1;
+    transition-duration: 0.4s;
+    transform: translateY(0);
+}
+
+.hamburger-Image {
+    width: 80%;
+    overflow: clip;
+    opacity: 0;
+    transform: translateY(-1rem);
+    display: grid;
+    justify-items: center;
+}
+.hamburger-Image img{
+    width: 100%;
+    border-radius: 2rem;
+}
+.hamburger-Image.active{
+    transition-delay: 0.5s;
+    opacity: 1;
+    transition-duration: 0.4s;
+    transform: translateY(0);
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    color: #FFF5EE;
+}
+
+.welcome {
+    font-size: 18px;
+    font-weight: 400;
+    color: #d4af37;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.store-name {
+    font-family: 'Allura', cursive;
+    font-size: 72px;
+    color: #d4af37;
+    margin: 0;
+}
+
+.intro-text {
+    font-size: 20px;
+    max-width: 700px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #FFF5EE;
+}
+
+.cta-button {
+    opacity: 0;
+    margin-top: 35px;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #d4af37;
+    border: none;
+    color: #111;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    filter: brightness(120%);
+}
+
+.coming-soon {
+    margin-top: 40px;
+    font-size: 16px;
+    color: #ccc;
+    font-style: italic;
+    opacity: 0;
+}
+.infinite-scroll {
+    width: 100%;
+    overflow: hidden;
+    background: #111; /* subtle dark background */
+    padding: 20px 0;
+}
+
+.scroll-wrapper {
+    display: flex;
+    align-items: center;
+    /* Duplicate the items by setting a width that's twice the viewport */
+    width: 200%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    flex-shrink: 0;
+    width: 150px;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (min-width: 746px) {
+    .hamburger-Image img {
+        max-width: 35rem;
+    }
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #FFF5EE;
+    padding: 20px 0;
+}
+
+.scroll-content {
+    display: inline-block;
+    animation: scroll 30s linear infinite;
+}
+
+.product {
+    display: inline-block;
+    width: 100px;
+    margin: 0 15px;
+    white-space: normal;
+    vertical-align: top;
+}
+
+.product img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

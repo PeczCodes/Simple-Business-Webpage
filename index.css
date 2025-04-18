@@ -3,19 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
-.store-name {
-    font-weight: 600;
-    font-size: 54px;
-    color: #d4af37;
-}
-
-.logo {
-    font-family: 'Dancing Script', cursive;
-    font-style: italic;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 5px;
-}
 
 
 :root {
@@ -34,7 +21,6 @@ body {
     padding: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./assets/homebg.jpg") no-repeat center center fixed;
     background-size: cover;
-    /*font-family: 'Montserrat', sans-serif;*/
     font-family: 'Raleway', sans-serif;
     color: var(--background);
 }
@@ -47,6 +33,17 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.logo a {
+    color: var(--background)
 }
 
 
@@ -86,6 +83,7 @@ nav a:hover::after {
     align-items: center;
     display: grid;
     gap: 1px;
+    cursor: pointer;
 }
 .hamburger div {
     background-color: white;
@@ -226,14 +224,13 @@ nav a:hover::after {
 .infinite-scroll {
     width: 100%;
     overflow: hidden;
-    background: #111; /* subtle dark background */
+    background: #111;
     padding: 20px 0;
 }
 
 .scroll-wrapper {
     display: flex;
     align-items: center;
-    /* Duplicate the items by setting a width that's twice the viewport */
     width: 200%;
 }
 

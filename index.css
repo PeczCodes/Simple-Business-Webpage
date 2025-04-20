@@ -26,6 +26,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 6vw;
     overflow-x: clip;
     z-index: 8;
@@ -48,8 +49,8 @@ a {
 
 .hamburger {
     align-items: center;
+    gap: .6rem;
     display: grid;
-    gap: 1px;
     cursor: pointer;
 }
 .hamburger div {
@@ -234,7 +235,9 @@ a {
     display: inline-block;
     animation: scroll 30s linear infinite;
 }
-
+.scroll-content:hover {
+    animation-play-state: paused;
+}
 .product {
     display: inline-block;
     width: 100px;
@@ -273,4 +276,10 @@ footer {
 
 footer a {
     color: white;
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        font-size: 2.5rem;
+    }
 }
